@@ -2,11 +2,12 @@ package ru.practicum.dinner;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 public class DinnerConstructor {
     HashMap<String, ArrayList<String>> listOfDishTypes = new HashMap<>();
-    HashMap<Integer, ArrayList<String>> combo = new HashMap<>();
+    Map<Integer, ArrayList<String>> combo = new HashMap<>();
     ArrayList<String> listOfDishesForCombo = new ArrayList<>();
     ArrayList<String> listOfDishes;
     Random random = new Random();
