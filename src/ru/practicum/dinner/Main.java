@@ -45,27 +45,7 @@ public class Main {
         System.out.println("Введите название блюда:");
         String dishName = scanner.nextLine();
         // добавьте новое блюдо
-//        //Тестовый цикл - НАЧАЛО
-//        String[] categories = {"Первое", "Второе", "Напиток"};
-//        String[] dishes = {"Суп", "Борщ", "Щи", "Картофельное пюре", "Котлеты", "Макароны", "Спагетти", "Сок", "Лимонад", "Кофе"};
-//        for (int i = 0; i < 10; i++) {
-//            if(i <= 2) {
-//                dishType = categories[0];
-//                dishName = dishes[i];
-//            } else if (i > 2 && i <= 6) {
-//                dishType = categories[1];
-//                dishName = dishes[i];
-//            } else {
-//                dishType = categories[2];
-//                dishName = dishes[i];
-//            }
-//        dc.saveNewDish(dishType, dishName);
-//        }
-//        //Тестовый цикл - КОНЕЦ
-
         dc.saveNewDish(dishType, dishName);
-        //Проверка добавленных блюд
-        System.out.println(dc.menu);
     }
 
     private static void generateDishCombo() {
@@ -86,7 +66,7 @@ public class Main {
             nextItem = scanner.nextLine();
             if (nextItem.isEmpty()) {
                 break;
-            } else if (!dc.menu.containsKey(nextItem)) {
+            } else if (!dc.listOfDishTypes.containsKey(nextItem)) {
                 System.out.println("Такого типа блюда не существует. Введите другой тип");
             } else {
                 dishTypesForCombo.add(nextItem);

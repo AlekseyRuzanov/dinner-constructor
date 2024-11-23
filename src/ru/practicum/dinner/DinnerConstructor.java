@@ -5,28 +5,24 @@ import java.util.HashMap;
 import java.util.Random;
 
 public class DinnerConstructor {
-    HashMap<String, ArrayList<String>> menu;
-    ArrayList<String> dishes;
-    Random random = new Random();
+    HashMap<String, ArrayList<String>> listOfDishTypes = new HashMap<>();
     HashMap<Integer, ArrayList<String>> combo = new HashMap<>();
-    ArrayList<String> dishesForCombo = new ArrayList<>();
-
-    DinnerConstructor() {
-        menu = new HashMap<>();
-    }
+    ArrayList<String> listOfDishesForCombo = new ArrayList<>();
+    ArrayList<String> listOfDishes;
+    Random random = new Random();
 
     public void saveNewDish(String dishType, String dishName) {
-        if (!menu.containsKey(dishType)) {
-            dishes = new ArrayList<>();
-            dishes.add(dishName);
-            menu.put(dishType, dishes);
+        if (!listOfDishTypes.containsKey(dishType)) {
+            listOfDishes = new ArrayList<>();
+            listOfDishes.add(dishName);
+            listOfDishTypes.put(dishType, listOfDishes);
         } else {
-            menu.get(dishType).add(dishName);
+            listOfDishTypes.get(dishType).add(dishName);
         }
     }
 
     public void printDishTypes() {
-        for (String category : menu.keySet()) {
+        for (String category : listOfDishTypes.keySet()) {
             System.out.println(category);
         }
     }
@@ -35,13 +31,13 @@ public class DinnerConstructor {
         int randomNumberOfDish;
         combo.clear();
         for (int i = 0; i < numberOfCombos; i++) {
-            dishesForCombo.clear();
+            listOfDishesForCombo.clear();
             for (String type : dishTypesForCombo) {
-                randomNumberOfDish = random.nextInt(menu.get(type).size());
-                dishesForCombo.add(menu.get(type).get(randomNumberOfDish));
+                randomNumberOfDish = random.nextInt(listOfDishTypes.get(type).size());
+                listOfDishesForCombo.add(listOfDishTypes.get(type).get(randomNumberOfDish));
             }
-            combo.put(i, dishesForCombo);
-            System.out.println("Комбо " + (i+1));
+            combo.put(i, listOfDishesForCombo);
+            System.out.println("Комбо " + (i + 1));
             System.out.println(combo.get(i));
         }
     }
