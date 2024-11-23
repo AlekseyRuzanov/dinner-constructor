@@ -17,11 +17,14 @@ public class DinnerConstructor {
             dishes.add(dishName);
             menu.put(dishType, dishes);
         } else {
-            if (menu.get(dishType).contains(dishName)) {
-                System.out.println("Блюдо уже есть в этой категории меню");
-            } else {
-                menu.get(dishType).add(dishName);
-            }
+            menu.get(dishType).add(dishName);
+        }
+    }
+
+    public void printDishTypes() {
+        for (String category : menu.keySet()) {
+            System.out.println(category);
         }
     }
 }
+
