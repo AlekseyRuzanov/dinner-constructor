@@ -66,7 +66,7 @@ public class Main {
             nextItem = scanner.nextLine();
             if (nextItem.isEmpty()) {
                 break;
-            } else if (!dc.listOfDishTypes.containsKey(nextItem)) {
+            } else if (!dc.checkType(nextItem)) {
                 System.out.println("Такого типа блюда не существует. Введите другой тип");
             } else {
                 dishTypesForCombo.add(nextItem);

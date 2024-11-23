@@ -41,5 +41,9 @@ public class DinnerConstructor {
             System.out.println(combo.get(i));
         }
     }
+
+    public boolean checkType(String nextItem) {
+        return listOfDishTypes.containsKey(nextItem);
+    }
 }
 
