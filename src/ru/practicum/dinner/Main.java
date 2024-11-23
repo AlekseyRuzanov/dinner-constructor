@@ -40,7 +40,9 @@ public class Main {
         String dishType = scanner.nextLine();
         System.out.println("Введите название блюда:");
         String dishName = scanner.nextLine();
-
+        dc.saveNewDish(dishType, dishName);
+        //Проверка добавленных блюд
+        System.out.println(dc.menu);
         // добавьте новое блюдо
     }
 
@@ -54,10 +56,10 @@ public class Main {
         System.out.println("Вводите типы блюда, разделяя символом переноса строки (enter). Для завершения ввода введите пустую строку");
         String nextItem = scanner.nextLine();
 
-        //реализуйте ввод типов блюд
-        while (!nextItem.isEmpty()) {
-
-        }
+//        //реализуйте ввод типов блюд
+//        while (!nextItem.isEmpty()) {
+//
+//        }
 
         // сгенерируйте комбинации блюд и выведите на экран
 
